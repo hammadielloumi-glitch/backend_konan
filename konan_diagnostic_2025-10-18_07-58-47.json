@@ -1,0 +1,6 @@
+﻿{
+    "PostgreSQL":  "âœ… OK",
+    "FastAPI":  "âœ… OK",
+    "ChromaDB":  "âœ… OK",
+    "MemoryVector":  "âŒ"
+}

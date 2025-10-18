@@ -1,0 +1,7 @@
+﻿{
+    "timestamp":  "2025-10-18 07:57:31",
+    "FastAPI":  "âœ… OK",
+    "PostgreSQL":  "âœ… OK",
+    "ChromaDB":  "âœ… OK",
+    "MemoryVector":  "âœ… OK"
+}

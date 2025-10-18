@@ -1,0 +1,18 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# === Environnements ===
+venv/
+.env
+
+# === Données locales ===
+chroma_store/
+backups/
+*.sqlite3
+
+# === Docker artefacts ===
+*.log

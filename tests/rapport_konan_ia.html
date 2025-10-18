@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport Konan IA</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{font-family:Arial,sans-serif;margin:40px;background:#f9f9f9;}
+h1{color:#333;}
+th,td{border:1px solid #ddd;padding:8px;}
+th{background:#007bff;color:#fff;}
+table{border-collapse:collapse;width:100%;background:#fff;margin-top:20px;}
+#chart{width:600px;margin:40px auto;}
+button{margin-top:20px;padding:10px 20px;background:#28a745;color:#fff;border:none;border-radius:5px;cursor:pointer;}
+</style>
+</head>
+<body>
+<h1>📊 Rapport final Konan IA</h1>
+<p><strong>Date :</strong> 16/10/2025 22:29</p>
+<table>
+<tr><th>Langue</th><th>Durée moyenne (s)</th><th>Score global</th></tr></table>
+
+<div id='chart'><canvas id='radar'></canvas></div>
+<script>
+new Chart(document.getElementById('radar'),{
+ type:'radar',
+ data:{
+  labels:[],
+  datasets:[{
+   label:'Score IA',
+   data:[],
+   backgroundColor:'rgba(0,123,255,0.3)',
+   borderColor:'#007bff',
+   pointBackgroundColor:'#007bff'
+  }]
+ },
+ options:{scales:{r:{min:0,max:10,ticks:{stepSize:2}}}}
+});
+</script>
+<button onclick="window.print()">📄 Exporter PDF</button>
+</body></html>

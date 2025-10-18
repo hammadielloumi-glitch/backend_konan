@@ -1,0 +1,39 @@
+services:
+  konan_backend:
+    container_name: konan_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - konan_db
+    networks:
+      - konan_network
+
+  konan_db:
+    image: postgres:15
+    container_name: konan_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - konan_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - konan_network
+
+volumes:
+  konan_data:
+
+networks:
+  konan_network:
+    driver: bridge
